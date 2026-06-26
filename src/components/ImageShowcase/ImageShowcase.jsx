@@ -43,7 +43,7 @@ const ImageShowcase = () => {
         <img
           src={lobsterImage}
           alt="Lobster held by chopsticks"
-          className="h-full w-full object-cover object-center max-[991px]:object-[58%_center] max-[767px]:object-[62%_center] max-[520px]:object-[66%_center]"
+          className="h-full w-full object-cover object-center max-[991px]:object-[58%_center] max-[767px]:object-[62%_center] max-[520px]:object-[40%_center]"
         />
       </div>
 

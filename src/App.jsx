@@ -5,6 +5,7 @@ import ImageShowcase from "./components/ImageShowcase/ImageShowcase";
 import Menu from "./components/Menu/Menu";
 import Gallery from "./components/Gallery/Gallery";
 import CallToAction from "./components/CallToAction/CallToAction";
+import MapSection from "./components/MapSection/MapSection";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Menu />
         <Gallery />
         <CallToAction />
+        <MapSection />
       </main>
     </>
   );
