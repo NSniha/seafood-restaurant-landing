@@ -19,25 +19,45 @@ const Menu = () => {
 
     if (!currentSection) return;
 
+    const checkVisibility = () => {
+      const rect = currentSection.getBoundingClientRect();
+      const windowHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+
+      if (rect.top < windowHeight * 0.92 && rect.bottom > 0) {
+        setIsVisible(true);
+      }
+    };
+
+    checkVisibility();
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          observer.unobserve(entry.target);
         }
       },
       {
-        threshold: 0.12,
+        threshold: 0,
+        rootMargin: "0px 0px -8% 0px",
       }
     );
 
     observer.observe(currentSection);
+    window.addEventListener("scroll", checkVisibility, { passive: true });
+    window.addEventListener("resize", checkVisibility);
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", checkVisibility);
+      window.removeEventListener("resize", checkVisibility);
+    };
   }, []);
 
   const revealClass = isVisible
     ? "translate-y-0 opacity-100"
-    : "translate-y-10 opacity-0";
+    : "translate-y-8 opacity-0";
 
   const imageClass =
     "h-full w-full object-cover object-center transition duration-700 group-hover:scale-[1.045] group-hover:brightness-[1.04]";
@@ -71,7 +91,7 @@ const Menu = () => {
         <div className="mt-[54px] grid grid-cols-3 gap-[14px] max-[900px]:mt-10 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1">
           <div className="col-span-2 grid grid-cols-2 gap-[14px] max-[640px]:col-span-1 max-[640px]:grid-cols-1">
             <figure
-              className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[120ms] duration-700 ${revealClass}`}
+              className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[120ms] duration-700 max-[640px]:delay-75 ${revealClass}`}
             >
               <img
                 src={salmonPlate}
@@ -81,7 +101,7 @@ const Menu = () => {
             </figure>
 
             <figure
-              className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[180ms] duration-700 ${revealClass}`}
+              className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[180ms] duration-700 max-[640px]:delay-100 ${revealClass}`}
             >
               <img
                 src={salmonBowl}
@@ -91,7 +111,7 @@ const Menu = () => {
             </figure>
 
             <figure
-              className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[240ms] duration-700 ${revealClass}`}
+              className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[240ms] duration-700 max-[640px]:delay-150 ${revealClass}`}
             >
               <img
                 src={salmonSauce}
@@ -101,7 +121,7 @@ const Menu = () => {
             </figure>
 
             <figure
-              className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[300ms] duration-700 ${revealClass}`}
+              className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[300ms] duration-700 max-[640px]:delay-200 ${revealClass}`}
             >
               <img
                 src={salmonFillet}
@@ -119,7 +139,7 @@ const Menu = () => {
             </span>
 
             <div
-              className={`mb-[28px] mt-auto transition-all delay-[340ms] duration-700 max-[900px]:mb-0 max-[900px]:mt-0 max-[900px]:flex max-[900px]:items-end max-[640px]:block ${revealClass}`}
+              className={`mb-[28px] mt-auto transition-all delay-[340ms] duration-700 max-[900px]:mb-0 max-[900px]:mt-0 max-[900px]:flex max-[900px]:items-end max-[640px]:block max-[640px]:delay-150 ${revealClass}`}
             >
               <div>
                 <h3 className="m-0 font-['Cormorant_Garamond','Times_New_Roman',Georgia,serif] text-[31px] font-medium uppercase leading-[0.95] tracking-[-0.058em] text-[#111111] max-[1280px]:text-[26px] max-[640px]:text-[30px]">
@@ -136,7 +156,7 @@ const Menu = () => {
             </div>
 
             <figure
-              className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[420ms] duration-700 max-[900px]:aspect-square ${revealClass}`}
+              className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[420ms] duration-700 max-[900px]:aspect-square max-[640px]:delay-200 ${revealClass}`}
             >
               <img
                 src={salmonDelicacy}
@@ -159,7 +179,7 @@ const Menu = () => {
 
         <div className="mt-[50px] grid grid-cols-3 gap-[14px] max-[900px]:mt-10 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1">
           <figure
-            className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[180ms] duration-700 ${revealClass}`}
+            className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[180ms] duration-700 max-[640px]:delay-75 ${revealClass}`}
           >
             <img
               src={soupBlack}
@@ -169,7 +189,7 @@ const Menu = () => {
           </figure>
 
           <div
-            className={`pt-[4px] transition-all delay-[240ms] duration-700 max-[900px]:order-3 max-[640px]:order-none ${revealClass}`}
+            className={`pt-[4px] transition-all delay-[240ms] duration-700 max-[900px]:order-3 max-[640px]:order-none max-[640px]:delay-100 ${revealClass}`}
           >
             <p className="m-0 max-w-[440px] font-[Inter,Arial,sans-serif] text-[12px] font-semibold leading-[1.25] tracking-[0.005em] text-[#111111] max-[640px]:text-[13px] max-[640px]:leading-[1.42]">
               Our seafood chowder is a symphony of flavors and fragrances
@@ -180,7 +200,7 @@ const Menu = () => {
           </div>
 
           <figure
-            className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[300ms] duration-700 max-[900px]:order-2 ${revealClass}`}
+            className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[300ms] duration-700 max-[900px]:order-2 max-[640px]:delay-150 ${revealClass}`}
           >
             <img
               src={soupRed}
@@ -190,13 +210,13 @@ const Menu = () => {
           </figure>
 
           <figure
-            className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[360ms] duration-700 max-[900px]:order-4 max-[640px]:order-none ${revealClass}`}
+            className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[360ms] duration-700 max-[900px]:order-4 max-[640px]:order-none max-[640px]:delay-200 ${revealClass}`}
           >
             <img src={stewPan} alt="Seafood stew pan" className={imageClass} />
           </figure>
 
           <figure
-            className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[420ms] duration-700 max-[900px]:order-5 max-[640px]:order-none ${revealClass}`}
+            className={`group m-0 aspect-square overflow-hidden bg-[#dededc] transition-all delay-[420ms] duration-700 max-[900px]:order-5 max-[640px]:order-none max-[640px]:delay-300 ${revealClass}`}
           >
             <img
               src={soupBowl}
@@ -206,7 +226,7 @@ const Menu = () => {
           </figure>
 
           <div
-            className={`flex items-end pb-[33px] transition-all delay-[480ms] duration-700 max-[900px]:order-6 max-[900px]:pb-0 max-[640px]:order-none ${revealClass}`}
+            className={`flex items-end pb-[33px] transition-all delay-[480ms] duration-700 max-[900px]:order-6 max-[900px]:pb-0 max-[640px]:order-none max-[640px]:delay-150 ${revealClass}`}
           >
             <div>
               <h3 className="m-0 font-['Cormorant_Garamond','Times_New_Roman',Georgia,serif] text-[31px] font-medium uppercase leading-[0.95] tracking-[-0.058em] text-[#111111] max-[1280px]:text-[26px] max-[640px]:text-[30px]">

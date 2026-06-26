@@ -6,6 +6,7 @@ import Menu from "./components/Menu/Menu";
 import Gallery from "./components/Gallery/Gallery";
 import CallToAction from "./components/CallToAction/CallToAction";
 import MapSection from "./components/MapSection/MapSection";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -25,6 +26,10 @@ const App = () => {
         <CallToAction />
         <MapSection />
       </main>
+
+      {/* ==================== Footer ==================== */}
+
+      <Footer />
     </>
   );
 };

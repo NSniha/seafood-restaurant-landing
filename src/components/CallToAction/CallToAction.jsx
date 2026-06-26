@@ -44,7 +44,7 @@ const CallToAction = () => {
     <section
       id="suppliers"
       ref={sectionRef}
-      className="relative -mt-px overflow-hidden border-t-0 bg-[#f4f4f3] pb-[38px] pt-[32px] text-[#101010] outline-none max-[1180px]:pb-[42px] max-[1180px]:pt-[34px] max-[767px]:pb-[42px] max-[767px]:pt-[30px] max-[520px]:pb-[38px] max-[520px]:pt-[26px] max-[380px]:pb-[34px] max-[380px]:pt-[24px]"
+      className="relative -mt-px overflow-hidden border-t-0 bg-[#f4f4f3] pb-[100px] pt-[20px] text-[#101010] outline-none max-[1180px]:pb-[42px] max-[1180px]:pt-[34px] max-[767px]:pb-[42px] max-[767px]:pt-[30px] max-[520px]:pb-[38px] max-[520px]:pt-[26px] max-[380px]:pb-[34px] max-[380px]:pt-[24px]"
     >
       <div className={containerClass}>
         {/* ==================== CTA heading ==================== */}
