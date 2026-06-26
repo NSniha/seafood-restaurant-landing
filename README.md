@@ -1,10 +1,8 @@
+![alt text](seafood-restaurant-landing-preview.png)
+
 # NSUOMNAM — Seafood Restaurant Landing Page
 
 A multi-section restaurant marketing site built with React and Tailwind CSS. Designed around a West African seafood brand, the layout prioritizes food photography, sourcing narrative, and in-venue ambiance storytelling.
-
-## Preview
-
-![NSUOMNAM Seafood Restaurant Landing Page](YOUR_SCREENSHOT_URL)
 
 ## Live Demo
 
