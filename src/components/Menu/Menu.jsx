@@ -150,7 +150,7 @@ const Menu = () => {
         {/* ==================== Seafood soups heading ==================== */}
 
         <h2
-          className={`m-0 mt-[82px] whitespace-nowrap font-['Cormorant_Garamond','Times_New_Roman',Georgia,serif] text-[clamp(105px,9.75vw,180px)] font-medium uppercase leading-[0.78] tracking-[-0.082em] text-[#101010] transition-all delay-150 duration-700 max-[1280px]:text-[clamp(82px,9.4vw,134px)] max-[900px]:mt-[72px] max-[900px]:whitespace-normal max-[900px]:text-[clamp(64px,13vw,112px)] max-[640px]:mt-[58px] max-[640px]:text-[clamp(47px,15vw,78px)] ${revealClass}`}
+          className={`m-0 mt-[82px] max-w-full whitespace-nowrap font-['Cormorant_Garamond','Times_New_Roman',Georgia,serif] text-[clamp(92px,8.2vw,148px)] font-medium uppercase leading-[0.78] tracking-[-0.078em] text-[#101010] transition-all delay-150 duration-700 max-[1400px]:text-[clamp(88px,8vw,118px)] max-[1280px]:text-[clamp(76px,8.7vw,108px)] max-[900px]:mt-[72px] max-[900px]:whitespace-normal max-[900px]:text-[clamp(64px,13vw,112px)] max-[640px]:mt-[58px] max-[640px]:text-[clamp(47px,15vw,78px)] ${revealClass}`}
         >
           Fresh Seafood Soups
         </h2>

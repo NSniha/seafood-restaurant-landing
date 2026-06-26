@@ -3,6 +3,8 @@ import Hero from "./components/Hero/Hero";
 import History from "./components/History/History";
 import ImageShowcase from "./components/ImageShowcase/ImageShowcase";
 import Menu from "./components/Menu/Menu";
+import Gallery from "./components/Gallery/Gallery";
+import CallToAction from "./components/CallToAction/CallToAction";
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
         <History />
         <ImageShowcase />
         <Menu />
+        <Gallery />
+        <CallToAction />
       </main>
     </>
   );
