@@ -1,6 +1,7 @@
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import History from "./components/History/History";
+import Menu from "./components/Menu/Menu";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <main>
         <Hero />
         <History />
+        <Menu />
       </main>
     </>
   );
