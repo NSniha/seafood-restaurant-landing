@@ -135,7 +135,7 @@ const Gallery = () => {
 
   return (
     <section
-      id="map"
+      id="gallery"
       ref={sectionRef}
       className="relative -mt-px overflow-hidden bg-[#f4f4f3] pb-[118px] pt-0 text-[#101010] max-[1280px]:pb-[104px] max-[900px]:pb-[84px] max-[640px]:pb-[70px]"
     >

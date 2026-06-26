@@ -2,7 +2,25 @@ import { useEffect, useState } from "react";
 
 import brandIcon from "../../assets/images/icons/brand-icon.svg";
 
-const navItems = [
+const desktopNavItems = [
+  {
+    id: 1,
+    label: "History",
+    href: "#history",
+  },
+  {
+    id: 2,
+    label: "Menu",
+    href: "#menu",
+  },
+  {
+    id: 3,
+    label: "Map",
+    href: "#map",
+  },
+];
+
+const mobileNavItems = [
   {
     id: 1,
     label: "History",
@@ -91,10 +109,10 @@ const Header = () => {
           {/* ==================== Desktop navigation ==================== */}
 
           <nav
-            className="flex items-center justify-center gap-[clamp(18px,2.45vw,42px)] pl-1.5 max-[1180px]:hidden"
+            className="flex items-center justify-center gap-[clamp(42px,4.6vw,72px)] pl-1.5 max-[1180px]:hidden"
             aria-label="Main navigation"
           >
-            {navItems.map((item) => (
+            {desktopNavItems.map((item) => (
               <a
                 key={item.id}
                 href={item.href}
@@ -195,7 +213,7 @@ const Header = () => {
         </div>
 
         <nav className="mt-[68px] flex flex-col gap-6 max-[520px]:mt-[58px] max-[520px]:gap-5">
-          {navItems.map((item) => (
+          {mobileNavItems.map((item) => (
             <a
               key={item.id}
               href={item.href}

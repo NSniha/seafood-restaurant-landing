@@ -6,7 +6,9 @@ A multi-section restaurant marketing site built with React and Tailwind CSS. Des
 
 ## Live Demo
 
-[View Live →](https://deluxe-sorbet-645d94.netlify.app/)
+<a href="https://deluxe-sorbet-645d94.netlify.app/" target="_blank">
+  <img src="https://img.shields.io/badge/Live%20Demo-View%20Site%20→-FF6B35?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Demo" />
+</a>
 
 ---
 
